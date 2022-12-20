@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import banner from "../../assets/images/women.png";
 
 const Banner = () => {
@@ -19,7 +20,9 @@ const Banner = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn bg-primary">Get an Appointment</button>
+          <button className="btn btn-primary">
+            <Link to="/appointment">Get an Appointment</Link>
+          </button>
         </div>
       </div>
     </div>

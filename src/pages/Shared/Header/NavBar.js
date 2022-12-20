@@ -9,7 +9,7 @@ const NavBar = () => {
         <Link to="/home">Home</Link>
       </li>
       <li>
-        <Link to="/portfolio">Our Portfolio</Link>
+        <Link to="/appointment">Appointment</Link>
       </li>
       <li>
         <Link to="/team">Our Team</Link>
@@ -62,7 +62,7 @@ const NavBar = () => {
               {menuItems}
             </ul>
           </div>
-          <a href="/" className="btn btn-ghost normal-case text-xl">
+          <Link to="/" className="btn btn-lg btn-ghost normal-case text-xl">
             <img style={{ height: "60px" }} src={logo} alt="logo" />
             <p
               style={{ fontSize: "16px" }}
@@ -71,7 +71,7 @@ const NavBar = () => {
               <span className="font-bold"> Moyuri's </span>
               <span>Parlour</span>
             </p>
-          </a>
+          </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menuItems}</ul>
