@@ -21,7 +21,7 @@ const Banner = () => {
             a id nisi.
           </p>
           <button className="btn btn-primary">
-            <Link to="/appointment">Get an Appointment</Link>
+            <Link to="/services">Get an Appointment</Link>
           </button>
         </div>
       </div>

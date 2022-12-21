@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import face1 from "../../assets/icons/Group 1.png";
 import face2 from "../../assets/icons/Group 2.png";
 import face3 from "../../assets/icons/Group 3.png";
@@ -45,7 +46,9 @@ const Services = () => {
         ))}
       </div>
       <div className=" flex justify-center">
-        <button className="btn btn-primary">Explore More</button>
+        <button className="btn btn-primary">
+          <Link to="/services">Explore More</Link>
+        </button>
       </div>
     </div>
   );

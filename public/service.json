@@ -1,0 +1,38 @@
+[
+  {
+    "image": "https://i.ibb.co/mTtyMTL/Group-1.png",
+    "price": 199,
+    "name": "Anti Age Face Treatment",
+    "description": "our hospital open in 24/7 hours lorem8our hospital open in 24/7 hours lorem8 our hospital open in 24/7 hours lorem8"
+  },
+  {
+    "image": "https://i.ibb.co/X4MXdw9/Group-2.png",
+    "price": 99,
+    "name": "Hair Color & Styling",
+    "description": "our hospital open in 24/7 hours our hospital open in 24/7 hours lorem8 our hospital open in 24/7 hours lorem8"
+  },
+  {
+    "image": "https://i.ibb.co/GVZ5LjD/Group-3.png",
+    "price": 299,
+    "name": "Skin Care Treatment",
+    "description": "our hospital open in 24/7 hours our hospital open in 24/7 hours lorem8 our hospital open in 24/7 hours lorem8"
+  },
+  {
+    "image": "https://i.ibb.co/mTtyMTL/Group-1.png",
+    "price": 399,
+    "name": "Face Health Treatment",
+    "description": "our hospital open in 24/7 hours lorem8our hospital open in 24/7 hours lorem8 our hospital open in 24/7 hours lorem8"
+  },
+  {
+    "image": "https://i.ibb.co/X4MXdw9/Group-2.png",
+    "price": 49,
+    "name": "Hair Cleaning",
+    "description": "our hospital open in 24/7 hours our hospital open in 24/7 hours lorem8 our hospital open in 24/7 hours lorem8"
+  },
+  {
+    "image": "https://i.ibb.co/GVZ5LjD/Group-3.png",
+    "price": 249,
+    "name": "Skin Lazer Treatment",
+    "description": "our hospital open in 24/7 hours our hospital open in 24/7 hours lorem8 our hospital open in 24/7 hours lorem8"
+  }
+]

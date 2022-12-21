@@ -2,18 +2,18 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.config";
 
-const ServiceBookingModal = () => {
+const ServiceBookingModal = ({ bookService, setBookService }) => {
   const [user] = useAuthState(auth);
   const handleSubmit = (e) => {
     e.preventDefault();
   };
   return (
     <div>
-      <input type="checkbox" id="appointment-modal" className="modal-toggle" />
+      <input type="checkbox" id="booking-modal" className="modal-toggle" />
       <div className="modal modal-bottom sm:modal-middle">
         <div className="modal-box">
           <label
-            htmlFor="appointment-modal"
+            htmlFor="booking-modal"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
@@ -32,7 +32,7 @@ const ServiceBookingModal = () => {
                 // value={format(date, "PP")}
               />
             </div>
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <select
                 name="slot"
                 className="select select-bordered w-full max-w-xs"
@@ -43,7 +43,7 @@ const ServiceBookingModal = () => {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
             <div className="mb-4">
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -78,7 +78,7 @@ const ServiceBookingModal = () => {
 
             <div className="">
               <input
-                className="shadow cursor-pointer appearance-none border rounded w-full py-2 px-3 bg-gradient-to-r from-secondary to-primary text-white leading-tight focus:outline-none focus:shadow-outline"
+                className="shadow cursor-pointer appearance-none border rounded w-full py-2 px-3 bg-primary text-white leading-tight focus:outline-none focus:shadow-outline"
                 id="submit"
                 type="submit"
                 value="SUBMIT"
