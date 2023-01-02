@@ -1,8 +1,12 @@
 import React from "react";
+import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logoM.png";
+import auth from "../../../firebase.config";
 
 const NavBar = () => {
+  const [user] = useAuthState(auth);
+  const [signOut, loading, error] = useSignOut(auth);
   const menuItems = (
     <>
       <li>
@@ -12,25 +16,61 @@ const NavBar = () => {
         <Link to="/services">Services</Link>
       </li>
       <li>
-        <Link to="/team">Our Team</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </li>
       <li>
         <Link to="/contact">Contact Us</Link>
       </li>
       <li>
-        {/* {user ? (
-          <Link
-            className="btn btn-accent text-white"
-            onClick={handleSignOut}
-            to="/"
-          >
-            Sign Out
+        {user ? (
+          <div className="flex-none">
+            <div className="dropdown dropdown-end">
+              <div
+                tabIndex={0}
+                className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
+              >
+                <div className="card-body">
+                  <span className="font-bold text-lg">8 Items</span>
+                  <span className="text-info">Subtotal: $999</span>
+                  <div className="card-actions">
+                    <button className="btn btn-primary btn-block">
+                      View cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src="https://placeimg.com/80/80/people" />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link to="/profile" className="justify-between">
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link onClick={signOut} to="/">
+                    Sign Out
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        ) : (
+          // <Link className="btn btn-primary text-white" onClick={signOut} to="/">
+          //   Sign Out
+          // </Link>
+          <Link className="btn btn-primary rounded px-5 text-white" to="/login">
+            Login
           </Link>
-        ) : ( */}
-        <Link className="btn btn-primary rounded px-5 text-white" to="/login">
-          Login
-        </Link>
-        {/* )} */}
+        )}
       </li>
     </>
   );

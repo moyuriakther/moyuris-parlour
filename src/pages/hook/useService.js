@@ -1,11 +1,12 @@
-import React from 'react';
+import axios from "axios";
+import React, { useState } from "react";
 
 const useService = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const [services, setServices] = useState([]);
+  axios
+    .get("http://localhost:5050/services")
+    .then((res) => setServices(res.data));
+  return [services];
 };
 
 export default useService;

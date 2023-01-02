@@ -14,7 +14,6 @@ const AvailableServices = () => {
     refetch,
   } = useQuery(["available"], () =>
     axios.get(`http://localhost:5050/services`).then((res) => {
-      console.log(res);
       return res.data;
     })
   );
