@@ -15,15 +15,8 @@ const Service = ({ service, isBooking, setBookService }) => {
         <p className="text-gray-500">{service?.description}</p>
 
         {isBooking && (
-          // <label
-          //   htmlFor="booking-modal"
-          //   onClick={() => setBookService(service)}
-          //   className="btn btn-primary"
-          // >
-          //   Book now
-          // </label>
           <button className="btn btn-primary">
-            <Link to={`/service/${service.name}`}>Book Now</Link>
+            <Link to={`/service/${service._id}`}>Book Now</Link>
           </button>
         )}
       </div>

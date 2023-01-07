@@ -1,6 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.config";
 
 const Book = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
   const handleChange = (e) => {
     e.preventDefault();
   };
@@ -13,6 +17,8 @@ const Book = () => {
             type="text"
             placeholder="Type here"
             className="input input-bordered w-full max-w-xs"
+            value={user?.displayName}
+            readOnly
           />
         </div>
         <div className="form-control w-full max-w-xs my-2">
@@ -20,6 +26,8 @@ const Book = () => {
             type="text"
             placeholder="Type here"
             className="input w-full max-w-xs"
+            value={user?.email}
+            readOnly
           />
         </div>
         <div className="form-control w-full max-w-xs my-2">
