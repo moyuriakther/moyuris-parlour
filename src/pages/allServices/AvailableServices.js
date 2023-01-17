@@ -8,14 +8,16 @@ import LoadingSpinner from "../Shared/LoadingSpinner/LoadingSpinner";
 const AvailableServices = () => {
   const [bookService, setBookService] = useState(null);
   const [isBooking, setIsBooking] = useState(true);
-  const {
-    data: services,
-    isLoading,
-    refetch,
-  } = useQuery(["available"], () =>
-    axios.get(`http://localhost:5050/services`).then((res) => {
-      return res.data;
-    })
+  const { data: services, isLoading } = useQuery(["available"], () =>
+    axios
+      .get(`http://localhost:5050/services`, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((res) => {
+        return res.data;
+      })
   );
   if (isLoading) {
     return <LoadingSpinner />;
@@ -29,15 +31,16 @@ const AvailableServices = () => {
             service={service}
             key={service._id}
             setBookService={setBookService}
+            bookService={bookService}
           />
         ))}
       </div>
-      {bookService && (
+      {/* {bookService && (
         <ServiceBookingModal
           bookService={bookService}
           setBookService={setBookService}
         />
-      )}
+      )} */}
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
-  const { query } = useLocation();
-  console.log(query);
+  // const { query } = useLocation();
+  // console.log(query);
   return (
     <div className="container mx-auto">
       <div className="drawer drawer-mobile">
